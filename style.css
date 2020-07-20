@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Popping', sans-serif;
+}
+
+body {
+    
+    background: #16384c;
+    height: 100vh;
+}
+
+header {
+    background: #24536f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+header a {
+    text-decoration: none;
+    padding: 0 20px;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+header a:hover {
+    color: aqua;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+h1 {
+    color: #111;
+    letter-spacing: 2px;
+}
+
+.h3-contact {
+    color: aqua;
+}
+
+.content h2 {
+    padding: 10px 0;
+}
+
+.content p{
+    margin-bottom: 30px;
+}
+
+.content .btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border: solid 1px transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 9px 30px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color: #24536f;
+    color: aqua;
+    transition: background-color .3s;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    top: 20%;
+}
+
+.container .card {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #f3e9f1;
+    margin: 30px 20px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, .5);
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+.container .card:hover {
+    height: 420px;
+}
+
+.container .card .imgbox {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    bottom: 60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+   
+}
+
+.container .card .imgbox img {
+    width: 100%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.container .card .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+.container .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: .3s;
+}
+
+.container-contact {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding-top: 300px;
+    padding-bottom: 20px;
+}
+
+
+.btn:hover {
+    color: #111;
+    border: solid 1px aqua;
+    background: transparent;
+}
+
+form {
+	width: 30%;
+	font-family: roboto;
+	
+}
+
+.input-field {
+	position: relative;
+	margin-top: 50px;
+}
+
+.input-field input,
+.input-field textarea {
+	width: 100%;
+	box-sizing: border-box;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid #999;
+	font-size: 16px;
+	resize: none;
+}
+
+.input-field label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: aqua;
+	pointer-events: none;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+}
+
+.input-field input:focus + label, 
+.input-field textarea:focus + label,
+.input-field input:valid + label, 
+.input-field textarea:valid + label {
+	top: -25px;
+	padding: 2px 5px;
+	background: #24536f;
+	color: #16384c;
+	font-size: 16px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    min-height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+	background: #24536f;
+	transition: transform .2s;
+	box-shadow: 0 -3px 5px rgba(57, 63, 72, 0.3);
+}
+
+footer a:nth-child(1) {
+	
+	margin-left: 40px;
+}
+
+footer a:nth-child(2) {
+	
+	margin-right: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #111;
+}
+
+footer a:hover {
+	color: aqua;
+}
+
