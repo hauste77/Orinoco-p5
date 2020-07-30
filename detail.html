@@ -14,26 +14,45 @@
     <header>
         <h1>Bienvenue sur Orinours</h1>
         <nav>
-            <a href="contact.html">Contact</a>
-            <a href="panier.html" class="carts">Mon panier<span> 0</span></a>
+            <a href="index.html">Acceuille</a>
+            <a href="panier.html" class="carts"><ion-icon name="basket-outline"></ion-icon><span class="number">0</span></a>
         </nav>
     </header>
-    <div class="card"> 
-        <div class="imgbox">
-               <img src="" alt="" class="img">
-           </div>
-           <div class="content">
-               <h2 class="title"></h2>
-               <p class="description"></p>
-               <p class="price"></p>
-               <a href='#' class="btn">Ajouter au panier</a>
-           </div>
-        </div>
+
+    <div id="container-principale">
+        <div class="card detail"> 
+            <div class="imgbox">
+                   <img src="" alt="" class="img">
+               </div>
+               <div class="content dt">
+                   <h2 class="title"></h2>
+                   <p class="description-detail"></p>
+                   <p class="price-detail"></p>
+                   <select name="Couleur" id="">
+                    <option value="couleur">couleur</option>   
+                    <option value="1">Tan</option>
+                    <option value="2">Chocolate</option>
+                    <option value="3">Black</option>
+                    <option value="4">White</option>
+                    </select>
+                   <a href='#' class="btn">Ajouter au panier</a>
+               </div>
+             
+            </div>
+    
+            
+    </div>
+    
+
+   <!-- 
     <footer>
 		<a href="#">Mentions légales</a>
 		<a href="#">Contactez-nous</a>
-	</footer>
-    <script src="detail.js"></script>
+    </footer>
+     --> 
+    <script type="text/javascript" src="localStorage.js"></script>
+    <script type="text/javascript" src="detail.js"></script>
+    <script  src = "https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 
 </html>

@@ -1,54 +1,48 @@
 let url = 'http://localhost:3000/api/teddies/'
 
-const elTitle = document.querySelector(".title");
-const elImg = document.querySelector(".img");
-const elPrice = document.querySelector(".price");
-const elDesc = document.querySelector(".description");
 const urlParams = new URLSearchParams(window.location.search),
    id = urlParams.get("id");
 
-
-
 fetch(url + id).then((response) =>
-   response.json().then((data) => {    
+   response.json().then((data) => {
+      const elTitle = document.querySelector(".title"),
+         elImg = document.querySelector(".img"),
+         elPrice = document.querySelector(".price-detail"),
+         elDesc = document.querySelector(".description-detail"),
+         elBtn = document.querySelector(".btn");
       elTitle.innerText = data.name;
       elDesc.innerText = data.description;
       elImg.src = data.imageUrl;
       elPrice.innerText = data.price + ' $';
-      console.log(data);
-      
+      elBtn.onclick = addItemToCart.bind( null, id, data.price, data.name ); // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Function/bind
    })
 );
 
-const carts = document.querySelectorAll(".btn");
-
-for (let i = 0; i < carts.length; i++) {
-   carts[i].addEventListener('click', function() {
-      cartNumbers(id[i])
-      
-   })
-};
-
-function onLoadCartNumbers() {
-   let productNumbers = localStorage.getItem('cartNumbers');
-
-   if(productNumbers) {
-      document.querySelector('.carts span ').textContent = productNumbers
-   }
+function addItemToCart( id, price, name ) {
+   const cartItems = JSON.parse( localStorage.getItem("cartItems") );
+   //   cartItem = cartItems[ id ] || 0;
+  // cartItems[ id ] = cartItem + 1;
+  
+   cartItems[ id ] = { name: name, qt:cartItems[id] !== undefined ? cartItems[id].qt + 1 : 1, price: price }; // operateur ternaire
+   localStorage.setItem( "cartItems", JSON.stringify( cartItems ) );
+   updateCartNb();
+   return false;
+   
 }
 
-function cartNumbers() {
-   let productNumbers = localStorage.getItem('cartNumbers');
 
-   productNumbers = parseInt(productNumbers);
 
-   if( productNumbers ) {
-      localStorage.setItem('cartNumbers', productNumbers + 1);
-      document.querySelector('.carts span ').textContent = productNumbers + 1;
-   } else {
-      localStorage.setItem('cartNumbers', 1 );
-      document.querySelector('.carts span').textContent = 1;
-   }
-}
+// cartItem = cartItems[ id ] || 0;
+//
+// if ( cartItems[ id ] ) {
+//    cartItem = cartItems[ id ]
+// } else {
+//    cartItem = 0;
+// }
 
-onLoadCartNumbers();
+
+// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Boolean
+
+// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_logiques
+
+// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_conditionnel

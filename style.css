@@ -23,12 +23,12 @@ header {
 header a {
     text-decoration: none;
     padding: 0 20px;
-    color: #111;
+    color: aqua;
     letter-spacing: 1px;
 }
 
 header a:hover {
-    color: aqua;
+    color: #cfd7d7;
     transition: .3s;
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -36,13 +36,33 @@ header a:hover {
     -o-transition: .3s;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
+a.carts {
+    align-items: end;
+    display: flex;
+    font-size: 20px;
+}
+
+.ionicon-fill-none ionicon-stroke-width {
+    font-size: 20px;
+}
+
 h1 {
-    color: #111;
+    color: aqua;
     letter-spacing: 2px;
 }
 
 .h3-contact {
     color: aqua;
+}
+
+.content {
+    width: 260px;
+    color: #baf2f2;
 }
 
 .content h2 {
@@ -53,7 +73,13 @@ h1 {
     margin-bottom: 30px;
 }
 
-.content .btn {
+.number {
+    margin-left: 10px;
+}
+
+.content  .btn, select{
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.75rem;
@@ -73,7 +99,7 @@ h1 {
 }
 
 
-.container {
+#container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -82,7 +108,7 @@ h1 {
     top: 20%;
 }
 
-.container .card {
+#container .card {
     position: relative;
     max-width: 300px;
     height: 215px;
@@ -99,11 +125,11 @@ h1 {
     -o-transition: .3s ease-in-out;
 }
 
-.container .card:hover {
+#container .card:hover {
     height: 420px;
 }
 
-.container .card .imgbox {
+#container .card .imgbox {
     position: relative;
     width: 260px;
     height: 260px;
@@ -114,7 +140,29 @@ h1 {
    
 }
 
-.container .card .imgbox img {
+.card.detail {
+    border: solid 2px aqua;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, .5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.description-detail {
+    text-align: justify;
+    line-height: 20px;
+}
+
+dt {
+    width: 260px;
+}
+
+
+
+#container .card .imgbox img {
     width: 100%;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -123,7 +171,7 @@ h1 {
     -o-border-radius: 4px;
 }
 
-.container .card .content {
+#container .card .content {
     position: relative;
     margin-top: -140px;
     padding: 10px 15px;
@@ -138,24 +186,54 @@ h1 {
     -o-transition: .3s ease-in-out;
 }
 
-.container .card:hover .content {
+#container .card:hover .content {
     visibility: visible;
     opacity: 1;
     margin-top: -40px;
     transition-delay: .3s;
 }
 
-.container-contact {
-    flex-direction: column;
+#container-principale {
     display: flex;
     align-items: center;
-    padding-top: 300px;
-    padding-bottom: 20px;
+    justify-content: center;
+    height: 94vh;
+}
+
+#container-principale .description {
+    text-align: justify;
+    width: 80%;
+}
+
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 200px;
+}
+
+.container-contact .btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border: solid 1px transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 9px 30px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    background-color: #24536f;
+    color: aqua;
+    transition: background-color .3s;
+    -webkit-transition: background-color .3s;
+    -moz-transition: background-color .3s;
+    -ms-transition: background-color .3s;
+    -o-transition: background-color .3s;
 }
 
 
 .btn:hover {
-    color: #111;
     border: solid 1px aqua;
     background: transparent;
 }
@@ -180,7 +258,8 @@ form {
 	outline: none;
 	border-bottom: 2px solid #999;
 	font-size: 16px;
-	resize: none;
+    resize: none;
+    color: #baf2f2;
 }
 
 .input-field label {
@@ -203,7 +282,7 @@ form {
 	top: -25px;
 	padding: 2px 5px;
 	background: #24536f;
-	color: #16384c;
+	color: #baf2f2;
 	font-size: 16px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -242,5 +321,149 @@ footer a {
 
 footer a:hover {
 	color: aqua;
+}
+
+/* page panier */
+
+#products-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#products-header {
+    display: flex;
+    max-width: 1000px;
+    justify-content: space-between;
+    border-bottom: 3px solid aqua;
+    color: aqua;
+}
+
+.product-title {
+    width: 45%;
+}
+
+.price {
+    width: 9%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.quantity {
+    width: 27%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total {
+    width: 35%;
+    justify-content: flex-end;
+    display: flex;
+   
+}
+
+.content-panier p {
+    margin: 0;
+    width: 200px;
+    text-align: justify;
+}
+
+#products {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px 0;
+    border-bottom: 1px solid aqua;
+    color: #baf2f2;
+}
+
+#products .img-panier {
+    width: 140px;
+}
+
+#products .content-panier span {
+    width: 64%;
+    align-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.title-panier {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+}
+
+.total-panier {
+    display: flex;
+    justify-content: flex-end;
+    width: 14%;
+}
+
+#totale-panier {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+    color: #baf2f2;
+}
+
+.remove {
+    width: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-left: 20px;
+    background-color: #baf2f2;
+}
+
+@media screen and (max-width: 700px) {
+    header > h1  {
+        font-size: 18px;
+    }
+
+    header  a {
+        padding: 0 8px;
+    }
+
+    .container-contact {
+        padding: 100px 0;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .remove {
+        margin-left: 2px;
+    }
+
+    .price {
+        width: 17%;
+    }
+
+    .quantity {
+        width: 17%;
+    }
+
+    .title-panier {
+        width: 31%;
+    }
+
+    .produit {
+        width: 40%;
+    }
+
+    .total{
+        width: 25%;
+    }
+
+    #container {
+        top: 10%;
+    }
 }
 

@@ -9,17 +9,69 @@
   <header>
     <h1>Bienvenue sur Orinours</h1>
     <nav>
-        <a href="contact.html">Contact</a>
-        <a href="panier.html">Mon panier <span> 0</span></a>
+        <a href="index.html">Acceuille</a>
+        <a href="panier.html" class="carts"><ion-icon name="basket-outline"></ion-icon>
+          <span class="number">0</span></a>
     </nav>
 </header>
 
-<div class="container"></div>
+<div id="products-container">
+  <div id="products-header">
+    <div class="produit">PRODUIT</div>
+    <div>PRIX</div>
+    <div>QUANTITÉ</div>
+    <div>TOTAL</div>
+  </div>
+  <div id="products"> </div>
+  <div id="totale-panier"> </div>
+</div>
 
-<footer>
-<a href="#">Mentions légales</a>
-<a href="#">Contactez-nous</a>
-</footer>
-<script src=""></script>
+<div class="container-contact">
+  <h3 class="h3-contact">valider la commande</h3>
+  <form>
+      <div class="input-field">
+          <input type="text" name="" required="">
+          <label>Nom</label> 
+      </div>
+      <div class="input-field">
+          <input type="text" name="" required="">
+          <label>Prenom</label> 
+      </div>
+      <div class="input-field">
+          <input type="email" name="" required="">
+          <label>Email</label> 
+      </div>
+      <div class="input-field">
+          <input type="tel" name="" required="">
+          <label>Adresse</label> 
+      </div>
+      <div class="input-field">
+          <textarea rows="5" required=""></textarea>
+          <label>Message</label> 
+      </div>
+      <input type="submit" value="VALIDER" class="btn" >
+  </form>
+</div>
+
+<!-- 
+    <footer>
+		<a href="#">Mentions légales</a>
+		<a href="#">Contactez-nous</a>
+    </footer>
+     --> 
+<template id="product-item"> 
+  <div class="product-item">
+    <button class="remove"><ion-icon   name="trash-outline"></ion-icon></button>
+    <div class="title-panier"></div>
+    <div class="price"></div>
+    <div class="quantity"></div>
+    <div class="total"></div>
+  </div>
+</template>
+
+<script type="text/javascript" src="panier.js"></script>
+<script type="text/javascript" src="localStorage.js"></script>
+<script  src = "https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
 </body>
 </html>

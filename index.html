@@ -14,19 +14,34 @@
     <header>
         <h1>Bienvenue sur Orinours</h1>
         <nav>
-            <a href="contact.html">Contact</a>
-            <a href="panier.html">Mon panier</a>
+            <a href="panier.html" class="carts"><ion-icon name="basket-outline"></ion-icon><span class="number">0</span></a>
         </nav>
     </header>
 
-    <div class="container"></div>
+    <div id="container"></div>
 
+   <!-- 
     <footer>
 		<a href="#">Mentions légales</a>
 		<a href="#">Contactez-nous</a>
-	</footer>
+    </footer>
+     --> 
+    <template>
+        <div class="card"> 
+            <div class="imgbox">
+                <img class="img" alt="">
+            </div>
+            <div class="content">
+                <h2 class="title"></h2>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="btn" href="">Détail</a>
+            </div>
+        </div>
+    </template>
 
-    <script defer src="projet.js"></script>
+    <script type="text/javascript" src="projet.js"></script>
+    <script type="text/javascript" src="localStorage.js"></script>
+    <script  src = "https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 
 </html>
