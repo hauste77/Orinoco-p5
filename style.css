@@ -140,7 +140,7 @@ h1 {
    
 }
 
-.card.detail {
+.detail {
     border: solid 2px aqua;
     border-radius: 4px;
     padding: 15px;
@@ -149,6 +149,11 @@ h1 {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+}
+
+.detail img {
+    width: 260px;
+    height: 260px;
 }
 
 .description-detail {
@@ -163,7 +168,8 @@ dt {
 
 
 #container .card .imgbox img {
-    width: 100%;
+    width: 260px;
+    height: 260px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -239,7 +245,7 @@ dt {
 }
 
 form {
-	width: 30%;
+	width: 500px;
 	font-family: roboto;
 	
 }
@@ -329,6 +335,7 @@ footer a:hover {
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 50px;
+    padding: 0 15px;
 }
 
 #products-header {
@@ -372,8 +379,6 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-content: center;
-    padding: 10px 0;
-    border-bottom: 1px solid aqua;
     color: #baf2f2;
 }
 
@@ -393,6 +398,7 @@ footer a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    border-bottom: solid 1px aqua;
 }
 
 .title-panier {
@@ -494,6 +500,14 @@ footer a:hover {
 
     .card.detail {
         margin-top: 123px;
+    }
+
+    #container .card {
+        padding: 20px 5px;
+    }
+
+    #container .card .imgbox {
+        left: 15px;
     }
 }
 

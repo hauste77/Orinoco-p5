@@ -1,4 +1,4 @@
-const url = `${config.apiBase}/api/teddies`;
+const url = `${config.apiBase}/api/teddies/`;
 
 fetch(url).then((response) =>
    response.json().then((data) => {
