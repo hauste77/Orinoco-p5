@@ -7,30 +7,13 @@ function initCartItems() {
  }
 
 function updateCartNb() {
-    const elCartNb = document.querySelector('.carts span '),
-        cartItems = JSON.parse( localStorage.getItem('cartItems' ) );
+    const elCartNb = document.querySelector( '.carts span ' ),
+        cartItems = JSON.parse( localStorage.getItem( 'cartItems' ) );
     let cpt = 0;
 
     Object.entries( cartItems ).forEach( ( [key, value] ) => cpt += value.qt );
 
-    // exemple :
-    //
-    // const object1 = {
-    //     a: 'somestring',
-    //     b: 42
-    //   };
-
-    // Object.entries(object1) == [ [ "a", "somestring" ], [ "b", 42 ] ];
-
-    // [ "a", "b" ].forEach( ( e ) => console.log( e ) );
-    // "a"
-    // "b"
-
-    // [ [ "a", "somestring" ], [ "b", 42 ] ].forEach( ( [ key, value ] ) =>  console.log( key, value ) );
-    // "a", "somestring"
-    // "b", 42
-
-    localStorage.setItem('cartNumber', cpt );
+    localStorage.setItem( 'cartNumber', cpt );
     elCartNb.textContent = cpt;
 }
 
