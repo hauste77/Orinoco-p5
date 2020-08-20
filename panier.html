@@ -1,81 +1,88 @@
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="style.css">
   <title>panier</title>
 </head>
+
 <body>
   <header>
     <h1>Bienvenue sur Orinours</h1>
     <nav>
-        <a href="index.html">Accueil</a>
-        <a href="panier.html" class="carts"><ion-icon name="basket-outline"></ion-icon>
-          <span class="number">0</span></a>
+      <a href="index.html">Accueil</a>
+      <a href="panier.html" class="carts">
+        <ion-icon name="basket-outline"></ion-icon>
+        <span class="number">0</span>
+      </a>
     </nav>
-</header>
+  </header>
 
-<div id="products-container">
-  <div id="products-header">
-    <div class="produit">PRODUIT</div>
-    <div>PRIX</div>
-    <div>QUANTITÉ</div>
-    <div>TOTAL</div>
+  <div id="products-container">
+    <div id="products-header">
+      <div class="produit">PRODUIT</div>
+      <div>PRIX</div>
+      <div>QUANTITÉ</div>
+      <div>TOTAL</div>
+    </div>
+    <div id="products"> </div>
+    <div id="totale-panier"> </div>
   </div>
-  <div id="products"> </div>
-  <div id="totale-panier"> </div>
-</div>
 
-<div class="container-contact">
-  <h3 class="h3-contact">valider la commande</h3>
-  <form id="form">
+  <div class="container-contact">
+    <h3 class="h3-contact">valider la commande</h3>
+    <form id="form">
       <div class="input-field">
-          <input type="text" name="lastName" value="" required pattern="[a-zA-Z]" >
-          <label>Nom</label> 
+        <input type="text" name="lastName" value="" pattern="[A-Za-zâäàéèùêëîïôöçñ' -]+" required>
+        <label>Nom</label>
       </div>
       <div class="input-field">
-          <input type="text" name="firstName" value="" required>
-          <label>Prenom</label> 
+        <input type="text" name="firstName" value="" pattern="[A-Za-zâäàéèùêëîïôöçñ -]+" required>
+        <label>Prénom</label>
       </div>
       <div class="input-field">
-          <input type="email" name="email" value="" required>
-          <label>Email</label> 
+        <input type="email" name="email" value="" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" required>
+        <label>Email</label>
       </div>
       <div class="input-field">
-          <input type="text" name="address"  value="" required>
-          <label>Adresse</label> 
+        <input type="text" name="address" value="" pattern="([a-zA-Z0-9âäàéèùêëîïôöçñ' ]| |/|#|&)+" required>
+        <label>Adresse</label>
       </div>
       <div class="input-field">
-          <input type="text" name="city" value="" required>
-          <label>Ville</label> 
+        <input type="text" name="city" value="" pattern="[A-Za-zâäàéèùêëîïôöçñ_-]+" required>
+        <label>Ville</label>
       </div>
       <div class="input-field">
-          <textarea rows="5"></textarea>
-          <label>Message</label> 
+        <textarea rows="5"></textarea>
+        <label>Message</label>
       </div>
-      <input type="submit" value="VALIDER" class="btn" >
-  </form>
-</div>
-
-<!-- 
-    <footer>
-		<a href="#">Mentions légales</a>
-		<a href="#">Contactez-nous</a>
-    </footer>
-     --> 
-<template id="product-item"> 
-  <div class="product-item">
-    <button class="remove"><ion-icon   name="trash-outline"></ion-icon></button>
-    <div class="title-panier"></div>
-    <div class="price"></div>
-    <div class="quantity"></div>
-    <div class="total"></div>
+      <input type="submit" value="VALIDER" class="btn">
+    </form>
   </div>
-</template>
 
-<script src="config.url.js"></script>
-<script src="panier.js"></script>
-<script src="localStorage.js"></script>
-<script src = "https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+  <footer>
+    <a href="#">Mentions légales</a>
+    <a href="#">Contactez-nous</a>
+  </footer>
+
+  <template id="product-item">
+    <div class="product-item">
+      <button class="remove">
+        <ion-icon name="trash-outline"></ion-icon>
+      </button>
+      <div class="title-panier"></div>
+      <div class="price"></div>
+      <div class="quantity"></div>
+      <div class="total"></div>
+    </div>
+  </template>
+
+  <script src="config.url.js"></script>
+  <script src="localStorage.js"></script>
+  <script src="panier.js"></script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
+
 </html>

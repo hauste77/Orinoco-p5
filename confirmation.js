@@ -6,6 +6,5 @@ const urlParams = new URLSearchParams (window.location.search ),
    price = urlParams.get("price"),
    elNb = document.querySelector( "#nb" ),
    elPrice = document.querySelector( "#price" );
-
 elNb.innerText = 'N° ' + id;
 elPrice.innerText = price + ' $';

@@ -28,7 +28,7 @@ header a {
 }
 
 header a:hover {
-    color: #cfd7d7;
+    color: #baf2f2;
     transition: .3s;
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -125,6 +125,7 @@ h1 {
     -o-transition: .3s ease-in-out;
 }
 
+
 #container .card:hover {
     height: 420px;
 }
@@ -134,7 +135,7 @@ h1 {
     width: 260px;
     height: 260px;
     bottom: 60px;
-    left: 20px;
+    left: 17px;
     z-index: 1;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
    
@@ -241,7 +242,7 @@ dt {
 
 .btn:hover {
     border: solid 1px aqua;
-    background: transparent;
+    background-color: #24536f;
 }
 
 form {
@@ -311,22 +312,21 @@ footer {
 }
 
 footer a:nth-child(1) {
-	
 	margin-left: 40px;
 }
 
 footer a:nth-child(2) {
-	
 	margin-right: 40px;
 }
 
 footer a {
+    
     text-decoration: none;
-    color: #111;
+    color: aqua;
 }
 
 footer a:hover {
-	color: aqua;
+	color: #baf2f2;
 }
 
 /* page panier */
@@ -453,6 +453,17 @@ footer a:hover {
     font-size: 1.2rem;
 }
 
+@media screen and (max-width: 1150px) {
+    footer {
+        margin-top: 250px;
+        bottom: auto;
+    }
+
+    #container {
+        top: 10%;
+    }
+}
+
 @media screen and (max-width: 700px) {
     header > h1  {
         font-size: 18px;
@@ -475,7 +486,7 @@ footer a:hover {
     }
 
     .price {
-        width: 17%;
+        width: 22%;
     }
 
     .quantity {
@@ -494,9 +505,7 @@ footer a:hover {
         width: 25%;
     }
 
-    #container {
-        top: 10%;
-    }
+   
 
     .card.detail {
         margin-top: 123px;

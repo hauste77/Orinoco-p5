@@ -1,19 +1,24 @@
-const url = `${config.apiBase}/api/teddies/`;
-
+// Je fetch la route /teddies pour recuperer tous mes objets teddies
+// Je boucle sur la donnee recuperer pour traiter chacun de mes objets
+// Pour chaque objet, je cree un element teddy qui m'est retourne
+// J'ajoute cet element a mon conteneur de produits
 fetch(url).then((response) =>
    response.json().then((data) => {
-      console.log(data);
-         for(let teddy of data) {
-            addTeddy(teddy)
+      for(let teddy of data) {  
+         const container = document.querySelector( "#container" ),
+            el = newTeddyElement(teddy);
+         container.append( el );
       }
-   })
+   }).catch((error) => {
+      console.error("Nous avons rencontré une erreur" + error);
+    })
 );
 
-// fonction qui ajoute dynamiquement les teddy qu on récupérer via le fetch url
-// et qui récupére l'id du produit pour le stocké dans l'url
-function addTeddy(teddy) {
-   const container = document.querySelector( "#container" ),
-      tmp = document.querySelector( "template" ),
+// Cette fonction cree un element produit a partir du template produit du HTML
+// Elle le retourne une fois rempli
+// A noter : le bouton redirige vers la page detail du produit
+function newTeddyElement(teddy) {
+   const tmp = document.querySelector( "template" ),
       clone = document.importNode( tmp.content, true );
 
    const elImg = clone.querySelector( ".img" ),
@@ -26,6 +31,7 @@ function addTeddy(teddy) {
    elDesc.innerText = teddy.description;
    elBtn.href = `detail.html?id=${teddy._id}`;
 
-   container.append( clone );
+   return clone;
 }
 
+updateCartNb()
