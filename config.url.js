@@ -2,7 +2,7 @@
 
 const config = {
     apiBase: "http://localhost:3000",
-    frontBase: "http://127.0.0.1:5500"
+    frontBase: "https://orinoco77.herokuapp.com"
 }
 
 const url = `${config.apiBase}/api/teddies`;
